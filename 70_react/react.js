@@ -134,3 +134,16 @@ const updated = filtered.map(item => item.id == 3 ?
 console.log(updated);
 
 // 4. 라이브러리 불러오기
+// node.js : CommonJS 명세(문법)
+const moment = require("mement");
+
+// ES6(ES2015)
+
+import moment from "moment";
+
+// 내보내기
+// node.js
+module.exports = {};
+
+// ES6
+export default 컴포넌트명;
