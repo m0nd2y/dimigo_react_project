@@ -113,7 +113,7 @@ selected.done = !selected.done
 console.log(todo);
 */
 
-//추가
+// 추가
 const inserted = todo.concat({
     id : 3,
     text : "저녁밥 먹기",
@@ -122,3 +122,13 @@ const inserted = todo.concat({
 
 console.log(todo);
 console.log(inserted);
+
+// 삭제
+const filtered = inserted.filter(item => item.id !== 2);
+console.log(filtered);
+
+// 수정
+const updated = filtered.map(item => item.id == 3 ? 
+    {...item, done : !item.done} : item
+);
+console.log(updated);
