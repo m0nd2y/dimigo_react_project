@@ -28,3 +28,10 @@ const [one, two, three] = arr;
 console.log(one, two, three);
 
 // 객체
+const obj = {
+    id : 1,
+    text : "hello"
+};
+console.log(obj.id, obj.text); // obj["id"]
+const { id, text } = obj;
+console,log(id, text);
