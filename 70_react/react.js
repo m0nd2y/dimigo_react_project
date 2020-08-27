@@ -34,4 +34,12 @@ const obj = {
 };
 console.log(obj.id, obj.text); // obj["id"]
 const { id, text } = obj;
-console,log(id, text);
+console.log(id, text);
+
+const arrobj = [
+    { id : 1, text : "hello" },
+    { id : 2, text : "hi" },
+    { id : 3, text : "bye" },
+];
+const [first, second, third ] = arrobj;
+console.log(first, second, third);
