@@ -7,13 +7,39 @@ C_BOLD    = "\033[1m"
 
 #git add
 os.system("git add *")
+while(1) :
+    print(C_BOLD + C_YELLOW + "[+]" + C_END + "resetting commit?  [Y,N]")
+    answer = raw_input()
+    if(answer == "N") :
+        #commit
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "committing......")
+        commit_sh = "git commit -m 'commit'"
+        os.system(commit_sh)
 
-print(C_BOLD + C_YELLOW + "[+]" + C_END + "put commit : " )
-commit = raw_input()
+        #push
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "pushing......")
+        os.system("git push")
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "done")
+        break;
 
-#commit
-commit_sh = "git commit -m '" + commit + "'"
-os.system(commit_sh)
+    elif(answer == "Y") :
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "put commit : " )
+        commit = raw_input()
 
-#push
-os.system("git push")
+        #commit
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "committing......")
+        commit_sh = "git commit -m '" + commit + "'"
+        os.system(commit_sh)
+
+        #push
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "pushing......")
+        os.system("git push")
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "done")
+        break;
+
+    else :
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "wrong input..")
+        
+
+
+
