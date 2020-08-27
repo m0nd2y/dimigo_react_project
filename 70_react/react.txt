@@ -1,3 +1,6 @@
 1. React : Javascript 기반의 프론트엔드 라이브러리
 
 2. React 특징
+1) '컴포넌트' 라고 불리는 작은 코드 조각을 이용하여
+2) Virtual DOM (가상 DOM) 사용 Document object model
+3) 
