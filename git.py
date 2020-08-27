@@ -34,7 +34,7 @@ while(1) :
         #push
         print(C_BOLD + C_YELLOW + "[+]" + C_END + "pushing......")
         os.system("git push")
-        print(C_BOLD + C_YELLOW + "[+]" + C_END + "done")
+        print(C_BOLD + C_YELLOW + "[+]" + C_END + "Dong Upload")
         break;
 
     else :
