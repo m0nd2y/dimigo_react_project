@@ -92,6 +92,9 @@ const todo = [
         done : false
     },
 ];
+
+/*
+//추가
 todo.push({
     id : 3,
     text : "저녁밥 먹기",
@@ -102,3 +105,20 @@ console.log(todo);
 // 삭제
 todo.splice(1,1);
 console.log(todo);
+
+//수정
+
+const selected = todo.find((item) => item.id == 3)
+selected.done = !selected.done
+console.log(todo);
+*/
+
+//추가
+const inserted = todo.concat({
+    id : 3,
+    text : "저녁밥 먹기",
+    done : false,
+});
+
+console.log(todo);
+console.log(inserted);
