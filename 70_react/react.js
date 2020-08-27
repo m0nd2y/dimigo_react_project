@@ -71,3 +71,30 @@ const object = {
     a : 1,
     b : 2,
 };
+object.b = 3; // (X) -> 불변성이 깨짐
+console.log(object.b)
+
+const newObject = {
+    ...object,
+    b : 3,
+};
+
+// 배열
+const todo = [
+    {
+        id : 1,
+        text : "아침밥 먹기",
+        done : true
+    },
+    {
+        id : 2,
+        text : "점심밥 먹기",
+        done : false
+    },
+];
+todo.push({
+    id : 3,
+    text : "저녁밥 먹기",
+    done : false,
+});
+console.log(todo)
