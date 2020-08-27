@@ -97,4 +97,8 @@ todo.push({
     text : "저녁밥 먹기",
     done : false,
 });
-console.log(todo)
+console.log(todo);
+
+// 삭제
+todo.splice(1,1);
+console.log(todo);
