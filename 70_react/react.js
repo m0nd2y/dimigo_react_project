@@ -50,9 +50,24 @@ const [
     { id: id2, text: text2},
     { id: id3, text: text3},
 ] = arrobj;
+/* why?
+const [
+    { id1, text1},
+    { id2, text2},
+    { id3, text3},
+] = arrobj;
+*/
 console.log(id1, text1);
 console.log(id2, text2);
 console.log(id3, text3);
 
 let c = 1, d = 2;
 [c, d] = [d, c];
+console.log(c, d);
+
+// 3. 불변성 유지
+// 객체
+const object = {
+    a : 1,
+    b : 2,
+};
