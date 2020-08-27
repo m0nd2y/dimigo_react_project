@@ -43,3 +43,16 @@ const arrobj = [
 ];
 const [first, second, third ] = arrobj;
 console.log(first, second, third);
+
+// const id1 = arrobj[0].id
+const [
+    { id: id1, text: text1},
+    { id: id2, text: text2},
+    { id: id3, text: text3},
+] = arrobj;
+console.log(id1, text1);
+console.log(id2, text2);
+console.log(id3, text3);
+
+let c = 1, d = 2;
+[c, d] = [d, c];
