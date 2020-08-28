@@ -14,3 +14,9 @@
 2) 비구조화 할당
 3) 불변성 유지
 4) import, export
+
+
+4. React 작업환경 준비
+- Node.js
+- Yarn : 개선된 버전의 npm
+- npx create-react-app [앱이름]
