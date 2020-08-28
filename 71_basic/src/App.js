@@ -1,6 +1,7 @@
 import React from 'react';
 import Hello from './Hello';
 import Hello2 from './Hello2';
+import "./App.css";
 
 // 함수형 컴포넌트
 // return (JSX)
@@ -10,7 +11,7 @@ import Hello2 from './Hello2';
 // 2. 여는 태그와 닫는 태그가 있어야 함
 // 3. JSX안에서 javascript 값을 사용할 때에는 {} 사용함
 // 4. 인라인 style 작성 시 객체 형태로 작성 (Camelcase)
-// 5. css class
+// 5. css class 설정 시에는 class -> className
 
 
 function App() {
