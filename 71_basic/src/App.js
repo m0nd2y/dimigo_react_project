@@ -23,9 +23,17 @@ function App() {
 
   }
   return (
+    // 주석인가?
   <div>
-    <div style={style}>{name}</div>
-    <div className="box"></div>
+    {/*주석인가?*/}
+    <div 
+      //주석인가? 
+      style={style}>{name}
+      </div>
+    <div
+      className="box">
+
+      </div>
     <Hello />
     <Hello2 />
   </div>
