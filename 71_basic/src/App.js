@@ -12,6 +12,9 @@ import "./App.css";
 // 3. JSX안에서 javascript 값을 사용할 때에는 {} 사용함
 // 4. 인라인 style 작성 시 객체 형태로 작성 (Camelcase)
 // 5. css class 설정 시에는 class -> className
+// 6. 주석작성
+// -JSX내에서는 {/* */} 작성
+// - 열린 태그 내에서 // 작성
 
 
 function App() {
@@ -24,7 +27,7 @@ function App() {
   }
   return (
     // 주석인가?
-  <div>
+  <>
     {/*주석인가?*/}
     <div 
       //주석인가? 
@@ -36,7 +39,7 @@ function App() {
       </div>
     <Hello />
     <Hello2 />
-  </div>
+  </>
   ) 
 };
 
