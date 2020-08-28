@@ -22,3 +22,8 @@
 - npx create-react-app [앱이름]
 
 5. JSX 규칙
+
+
+6. react에서 다루는 데이터
+1) props(Properties) : 부모 컴포넌트가 자식 컴포넌트에게 주는 값
+2) state : 

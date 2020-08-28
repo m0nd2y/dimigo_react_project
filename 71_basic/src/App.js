@@ -27,20 +27,16 @@ function App() {
   }
   return (
     // 주석인가?
-  <>
+  <div>
     {/*주석인가?*/}
-    <div 
-      //주석인가? 
-      style={style}>{name}
-      </div>
-    <div
-      className="box">
-
-      </div>
-    <Hello />
+    <div style={style}>{name} </div>
+    <div className="box"> </div>
+    <Hello name="홍길동" color="blue" >
+      태그안의 텍스트입니다.
+    </Hello>
     <Hello2 />
-  </>
-  ) 
+  </div>
+  )
 };
 
 export default App;

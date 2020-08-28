@@ -1,8 +1,10 @@
 import React from "react" // const React = react
 
-function Hello() {
+// const props = { name : "홍길동" , color : "blue", children=""}
+
+function Hello({name, color}) {
     return (
-        <div>안녕하세요, 리액트를 배워봅시다. </div>
+        <div style={{color}} >안녕하세요, {name}님</div>
     )
 }
 
