@@ -1,5 +1,6 @@
 import React from 'react';
 import Hello from './Hello';
+import Hello2 from './Hello2';
 
 // 함수형 컴포넌트
 // return (JSX)
@@ -9,8 +10,7 @@ function App() {
   return (
   <div>
     <Hello />
-    <Hello />
-    <Hello />
+    <Hello2 />
   </div>
   ) 
 };
