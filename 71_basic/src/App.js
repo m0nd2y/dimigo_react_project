@@ -34,6 +34,7 @@ function App() {
     <Hello name="홍길동" color="blue" >
       태그안의 텍스트입니다.
     </Hello>
+    <Hello />
     <Hello2 />
   </div>
   )
