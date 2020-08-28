@@ -25,6 +25,7 @@ function App() {
   return (
   <div>
     <div style={style}>{name}</div>
+    <div className="box"></div>
     <Hello />
     <Hello2 />
   </div>
