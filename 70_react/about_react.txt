@@ -20,3 +20,5 @@
 - Node.js
 - Yarn : 개선된 버전의 npm
 - npx create-react-app [앱이름]
+
+5. JSX 규칙
