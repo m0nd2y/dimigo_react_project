@@ -2,7 +2,7 @@ import React from 'react';
 import Hello from './Hello';
 import Hello2 from './Hello2';
 import "./App.css";
-import StateSample from './StateSample';
+import State from './State';
 
 // 함수형 컴포넌트
 // return (JSX)
@@ -18,7 +18,7 @@ import StateSample from './StateSample';
 // - 열린 태그 내에서 // 작성
 
 function App() {
-  return <StateSample />;
+  return <State />
 }
 
 /*
