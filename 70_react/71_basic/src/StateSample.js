@@ -11,6 +11,7 @@ function StateSample() {
 
     const plus = () => {
         setNumber(number+1); //setter 함수를 통해 직접 변경해야됨
+        setNumber((prev) => prev + 1); //setter 함수를 통해 직접 변경해야됨
     };
 
     const minus = () => {
@@ -20,12 +21,12 @@ function StateSample() {
     const reset = () => {
         setNumber(number-number); //setter 함수를 통해 직접 변경해야됨
     };
-
+    
     return (
         <>
             <div>
                 <p>You clicked {count} times.</p>
-                <button onClick={counter()}>Click me[+]</button>
+                <button onClick={counter}>Click me[+]</button>
             </div>
             <div>
                 <h1>{number}</h1>
