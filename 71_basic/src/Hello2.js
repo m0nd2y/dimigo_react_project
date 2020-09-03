@@ -1,13 +1,15 @@
 import React from "react" // const React = react
 import PropTypes from "prop-types";
 
-function Hello2({ id, name, color}) {
-    return (
-        <div>안녕하세요, 리액트를 배워봅시다.hello2 </div>
-        <div>{id}</div>
-        <div>{name}</div>
-        <div>{color}</div>
+function Hello2 ({messages = []}) {
 
+    return (
+        <>
+        {messages.length > 0 ?
+            messages.length + "건의 메시지가 있습니다." :
+            "메시지가 없습니다"
+        }
+        </>
     )
 }
 

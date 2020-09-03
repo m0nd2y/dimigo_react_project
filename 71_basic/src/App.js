@@ -34,12 +34,10 @@ function App() {
     <Hello name={name} color="blue" >
       태그안의 텍스트입니다.
     </Hello>
-    <Hello />
     {name}
-    <Hello2 />
-    <Hello2 id="3520" name="이동준" color="blue" >
-      m0nd2y
-    </Hello2>
+    
+    <Hello2 messages={["메세지1", "메세지2", "메세지3"]} />
+
   </div>
   )
 };
