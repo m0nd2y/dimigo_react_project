@@ -25,5 +25,11 @@
 
 
 6. react에서 다루는 데이터
-1) props(Properties) : 부모 컴포넌트가 자식 컴포넌트에게 주는 값
-2) state : 
+1) props(Properties)
+- 부모 컴포넌트가 자식 컴포넌트에게 주는 값
+- 자식 컴포넌트는 props를 받아오기만 할 수 있음 (read only)
+
+2) state
+
+7. 조건부 렌더링
+1) 조건에 따라 다른 결과물을 렌더링 하는 경우

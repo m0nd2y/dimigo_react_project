@@ -31,11 +31,15 @@ function App() {
     {/*주석인가?*/}
     <div style={style}>{name} </div>
     <div className="box"> </div>
-    <Hello name="홍길동" color="blue" >
+    <Hello name={name} color="blue" >
       태그안의 텍스트입니다.
     </Hello>
     <Hello />
+    {name}
     <Hello2 />
+    <Hello2 id="3520" name="이동준" color="blue" >
+      m0nd2y
+    </Hello2>
   </div>
   )
 };

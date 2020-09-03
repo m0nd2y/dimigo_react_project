@@ -14,7 +14,7 @@ function Hello({ name = "이름없음", color = "black", children = "내용없�
 }
 
 Hello.defaultProps = {
-    //name: "이름없음2",
+    name: "이름없음2",
     color : "black",
     children : "내용없음2",
 };
