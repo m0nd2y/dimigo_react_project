@@ -49,6 +49,7 @@ function App() {
 
   const onCreate = () => {
     // 배열에 추가
+    // 1. spread 연산자
     setMusicList([
       ...musicList,
       {
@@ -58,7 +59,7 @@ function App() {
         //singer: singer,
       },
     ]);
-    // ...
+    // 2. concat() 함수
 
     nextId.current += 1;
     setMusic({
