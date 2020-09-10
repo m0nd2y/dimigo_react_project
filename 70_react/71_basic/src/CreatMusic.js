@@ -1,6 +1,6 @@
 import React from "react";
 
-function CreatMusic() {
+function CreatMusic({ onChange }) {
     return (
         <>
             <input name="title" placeholder = "노래제목" onChange={onChange}></input>
