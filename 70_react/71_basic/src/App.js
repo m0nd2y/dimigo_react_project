@@ -29,6 +29,7 @@ function App() {
     singer: '',
   });
 
+  const {title, singer} = music;
 
   const musicList = [
     { id: 1, singer: "아이유", title: "eight" },
