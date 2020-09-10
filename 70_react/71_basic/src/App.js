@@ -31,12 +31,19 @@ function App() {
 
   const {title, singer} = music;
 
-  const musicList = [
+  const [musicList, setMusicLisc] = useState([
     { id: 1, singer: "아이유", title: "eight" },
     { id: 2, singer: "폴킴", title: "Hero" },
     { id: 3, singer: "장범준", title: "실버판테온" },
-  ];
+  ]);
 
+  const onChange = (e) => {
+    const { name, value } = e.targer;
+    setMusic({
+      ...music, 
+      [name] : value // e.target.name -> title, value
+    })
+  }
   // nextID.current = 4
   const nextID = useRef(4);
 
@@ -45,7 +52,7 @@ function App() {
   }
   return (
     <>
-      <CreatMusic/>
+      <CreatMusic onChange={onChange}/>
       <MusicList musicList={musicList} />
     </>
   );
