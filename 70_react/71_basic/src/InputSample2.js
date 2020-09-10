@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useREF } from "react"; //비구조화 할당?
 
 function UpgradeInput() {
   const [student, setStudent] = useState({
     id: "",
     name: "",
   });
+
+
+  // inputID = {current: }
+  const inputID = useREF(); //ref 객체 
   
   const { id, name } = student;
 
