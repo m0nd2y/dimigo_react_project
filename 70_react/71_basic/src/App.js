@@ -49,10 +49,19 @@ function App() {
 
   const onCreate = () => {
     nextID.current += 1;
-  }
+    setMusic({
+      title: '',
+      singet: '',
+    });
+  };
   return (
     <>
-      <CreatMusic onChange={onChange}/>
+      <CreatMusic
+        title={title}
+        singer={singer}
+        onChange={onChange}
+        onCreate={onCreate}
+      />
       <MusicList musicList={musicList} />
     </>
   );
