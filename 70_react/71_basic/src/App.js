@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import Hello from './Hello';
 import Hello2 from './Hello2';
 import "./App.css";
@@ -8,6 +8,7 @@ import InputSample from './InputSample';
 import InputSample2 from './InputSample2';
 import MusicList from './MusicList';
 import MovieList from './MovieList';
+import CreatMusic from './CreatMusic';
 
 // 함수형 컴포넌트
 // return (JSX)
@@ -23,7 +24,30 @@ import MovieList from './MovieList';
 // - 열린 태그 내에서 // 작성
 
 function App() {
-  return <MovieList />
+  const [music, setMusic] = useState({
+    title: '',
+    singer: '',
+  });
+
+
+  const musicList = [
+    { id: 1, singer: "아이유", title: "eight" },
+    { id: 2, singer: "폴킴", title: "Hero" },
+    { id: 3, singer: "장범준", title: "실버판테온" },
+  ];
+
+  // nextID.current = 4
+  const nextID = useRef(4);
+
+  const onCreate = () => {
+    nextID.current += 1;
+  }
+  return (
+    <>
+      <CreatMusic/>
+      <MusicList musicList={musicList} />
+    </>
+  );
 }
 
 /*
