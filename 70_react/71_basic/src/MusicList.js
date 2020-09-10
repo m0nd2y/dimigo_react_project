@@ -10,7 +10,15 @@ function MusicList() {
 
     return (
         <>
-            <div><b>{musicList[0].title}</b></div>
+            <div>
+                <b>{musicList[0].title}</b>({musicList[0].singer})
+            </div>
+            <div>
+                <b>{musicList[1].title}</b>({musicList[1].singer})
+            </div>
+            <div>
+                <b>{musicList[2].title}</b>({musicList[2].singer})
+            </div>
         </>
     )
 }

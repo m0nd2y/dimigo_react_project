@@ -6,6 +6,7 @@ import State from './State';
 import StateSample2 from './StateSample2';
 import InputSample from './InputSample';
 import InputSample2 from './InputSample2';
+import MusicList from './MusicList';
 
 // 함수형 컴포넌트
 // return (JSX)
@@ -21,7 +22,7 @@ import InputSample2 from './InputSample2';
 // - 열린 태그 내에서 // 작성
 
 function App() {
-  return <InputSample2 />
+  return <MusicList />
 }
 
 /*
