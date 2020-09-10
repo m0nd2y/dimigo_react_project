@@ -21,7 +21,7 @@ function MusicList() {
     return (
         <>
             { musicList.map((music) => (
-                <Music music={music} />
+                <Music key={music.id} music={music} />
             ))}
         </>
     )
