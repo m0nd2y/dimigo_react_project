@@ -1,7 +1,7 @@
 import React from "react";
 
 function MusicList() {
-    
+
     const musicList = [
         { id: 1, singer: "아이유", title: "eight" },
         { id: 2, singer: "폴킴", title: "Hero" },
@@ -10,7 +10,7 @@ function MusicList() {
 
     return (
         <>
-            
+            <div><b>{musicList[0].title}</b></div>
         </>
     )
 }
