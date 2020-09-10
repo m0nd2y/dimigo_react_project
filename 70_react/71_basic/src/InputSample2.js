@@ -1,4 +1,4 @@
-import React, { useState, useREF } from "react"; //비구조화 할당?
+import React, { useState, useRef } from "react"; //비구조화 할당?
 
 function UpgradeInput() {
   const [student, setStudent] = useState({
@@ -7,8 +7,9 @@ function UpgradeInput() {
   });
 
 
-  // inputID = {current: }
-  const inputID = useREF(); //ref 객체 
+  // inputId = {current: }
+  const inputId = useRef(); //ref 객체 
+  const inputName = useRef(); //ref 객체 
   
   const { id, name } = student;
 
@@ -25,13 +26,14 @@ function UpgradeInput() {
       id: "",
       name: "",
     });
+    inputName.current.focus();
   };
 
   return (
     <>
       <div>
-        <input onChange={onChange} value={id} name="id" />
-        <input onChange={onChange} value={name} name="name" />
+        <input onChange={onChange} value={id} name="id" ref = {inputId} />
+        <input onChange={onChange} value={name} name="name" ref = {inputName} />
         <button onClick={onReset}>초기화</button>
         <div>
           <p>id: {id}</p>
