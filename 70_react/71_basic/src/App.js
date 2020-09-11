@@ -83,7 +83,7 @@ function App() {
         onChange={onChange}
         onCreate={onCreate}
       />
-      <MusicList musicList={musicList} />
+      <MusicList musicList={musicList} onRemove={onRemove}/>
     </>
   );
 }
