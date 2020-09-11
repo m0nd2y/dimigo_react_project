@@ -9,6 +9,7 @@ import InputSample2 from './InputSample2';
 import MusicList from './MusicList';
 import MovieList from './MovieList';
 import CreatMusic from './CreatMusic';
+import CreatMovie from './CreatMovie';
 
 // 함수형 컴포넌트
 // return (JSX)
@@ -27,63 +28,137 @@ function App() {
   const [music, setMusic] = useState({
     title: '',
     singer: '',
+    atcive: false,
+  });
+  const [movie, setMovie] = useState({
+    mtitle: '',
+    director: '',
+    year: '',
   });
 
   const {title, singer} = music;
+  const {mtitle, director, year} = movie;
 
   const [musicList, setMusicList] = useState([
-    { id: 1, singer: "아이유", title: "eight" },
-    { id: 2, singer: "폴킴", title: "Hero" },
-    { id: 3, singer: "장범준", title: "실버판테온" },
+    { id: 1, singer: "아이유", title: "eight", atcive: false},
+    { id: 2, singer: "폴킴", title: "Hero" , atcive: false},
+    { id: 3, singer: "장범준", title: "실버판테온" , atcive: false},
   ]);
 
-  const onChange = (e) => {
+  const [movieList, setMovieList] = useState([
+    { id: 1, mtitle: "스타워즈", director: "조지 루카스", year: "1977" },
+    { id: 2, mtitle: "아바타", director: "제임스 카메론", year: "2009" },
+    { id: 3, mtitle: "인터스텔라", director: "크리스토퍼 놀란", year: "2014" },
+]);
+
+  const onChangeMusic = (e) => {
     const { name, value } = e.target;
     setMusic({
       ...music, 
       [name] : value // e.target.name -> title, value
     })
   }
-  // nextID.current = 4
-  const nextId = useRef(4);
 
-  const onCreate = () => {
+  const onChangeMovie = (e) => {
+    const { name, value } = e.target;
+    setMovie({
+      ...movie, 
+      [name] : value // e.target.name -> title, value
+    })
+  }
+  // nextID.current = 4
+  const nextIdMusic = useRef(4);
+  const nextIdMovie = useRef(4);
+
+  const onCreateMusic = () => {
     // 배열에 추가
     // 1. spread 연산자
     setMusicList([
       ...musicList,
       {
-        id: nextId.current,
+        id: nextIdMusic.current,
         ...music
         //title: title,
         //singer: singer,
       },
     ]);
-    // 2. concat() 함수
-
     setMusicList(musicList.concat({
-      id: nextId.current,
+      id: nextIdMusic.current,
       ...music,
     }))
-    nextId.current += 1;
+
+    nextIdMusic.current += 1;
+
     setMusic({
       title: '',
       singer: '',
     });
   };
 
-  const onRemove = (id) => {
+
+  const onCreateMovie = () => {
+    // 배열에 추가
+    // 1. spread 연산자
+    setMovieList([
+      ...movieList,
+      {
+        id: nextIdMovie.current,
+        ...movie
+        //title: title,
+        //singer: singer,
+      },
+    ]);
+  // 2. concat() 함수
+
+    
+  setMovieList(movieList.concat({
+      id: nextIdMovie.current,
+      ...movie,
+    }))
+
+  nextIdMovie.current += 1;
+  
+  setMovie({
+      mtitle: '',
+      director: '',
+      year: '',
+    });
+    
+  };
+
+  const onRemoveMusic = (id) => {
     setMusicList(musicList.filter(music => music.id !== id))
   };
+
+  const onToggle = (id) => {
+    setMusicList(musicList.map(music => music.id === id ? {
+      ...music,
+      active: !music.active,
+    } : music ))
+  }
+
+  const onRemoveMovie = (id) => {
+    setMovieList(movieList.filter(movie => movie.id !== id))
+  };
+
   return (
     <>
       <CreatMusic
         title={title}
         singer={singer}
-        onChange={onChange}
-        onCreate={onCreate}
+        onChangeMusic={onChangeMusic}
+        onCreateMusic={onCreateMusic}
       />
-      <MusicList musicList={musicList} onRemove={onRemove}/>
+      <MusicList musicList={musicList} onRemoveMusic={onRemoveMusic}/>
+      
+      <CreatMovie
+        mtitle={mtitle}
+        director={director}
+        year={year}
+        onChangeMovie={onChangeMovie}
+        onCreateMovie={onCreateMovie}
+      />
+      <MovieList movieList={movieList} onRemoveMovie={onRemoveMovie}/>
     </>
   );
 }

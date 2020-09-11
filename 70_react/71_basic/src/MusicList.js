@@ -1,23 +1,29 @@
 import React from "react";
 
 
-function Music({music, onRemove}) {
-    const { id, title, singer } = music;
+function Music({music, onRemoveMusic, onToggle}) {
+    const { id, title, singer, active } = music;
+    
+    const style = {
+        color: active ? "blue" : "black",
+        cursor: "pointer"
+    }
+
     return (
         <>
         <div>
-                <b>{title}</b>({singer})
-                <button onClick={() => onRemove(id)}>삭제</button>
+                <b style={style} onClick={() => onToggle(id)}>{title}</b>({singer})
+                <button onClick={() => onRemoveMusic(id)}>삭제</button>
             </div>
         </>
     )
 }
 
-function MusicList({ musicList, onRemove} ) {
+function MusicList({ musicList, onRemoveMusic, onToggle} ) {
     return (
         <>
             { musicList.map((music) => (
-                <Music key={music.id} music={music} onRemove={onRemove}/>
+                <Music key={music.id} music={music} onRemoveMusic={onRemoveMusic} onToggle={onToggle}/>
             ))}
         </>
     )

@@ -1,11 +1,11 @@
 import React from "react";
 
-function CreatMusic({ title, singer, onChange, onCreate }) {
+function CreatMusic({ title, singer, onChangeMusic, onCreateMusic }) {
     return (
         <>
-            <input name="title" placeholder = "노래제목" onChange={onChange} value={title}></input>
-            <input name="singer" placeholder = "노래제목" onChange={onChange} value={singer}></input>
-            <button onClick={onCreate}>등록</button>
+            <input name="title" placeholder = "노래제목" onChange={onChangeMusic} value={title}></input>
+            <input name="singer" placeholder = "노래제목" onChange={onChangeMusic} value={singer}></input>
+            <button onClick={onCreateMusic}>등록</button>
         </>
     )
 }
