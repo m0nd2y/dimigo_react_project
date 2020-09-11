@@ -61,12 +61,20 @@ function App() {
     ]);
     // 2. concat() 함수
 
+    setMusicList(musicList.concat({
+      id: nextId.current,
+      ...music,
+    }))
     nextId.current += 1;
     setMusic({
       title: '',
       singer: '',
     });
   };
+
+  const onremove = () => {
+    
+  }
   return (
     <>
       <CreatMusic
