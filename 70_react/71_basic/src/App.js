@@ -73,8 +73,8 @@ function App() {
   };
 
   const onRemove = (id) => {
-    
-  }
+    setMusicList(musicList.filter(music => music.id !== id))
+  };
   return (
     <>
       <CreatMusic
