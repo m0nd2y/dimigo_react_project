@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Music({music, onRemoveMusic, onToggle}) {
+function Music({music, onRemoveMusic, onToggleMusic}) {
     const { id, title, singer, active } = music;
     
     const style = {
@@ -12,18 +12,17 @@ function Music({music, onRemoveMusic, onToggle}) {
     return (
         <>
         <div>
-                <b style={style} onClick={() => onToggle(id)}>{title}</b>({singer})
+                <b style={style} onClick={() => onToggleMusic(id)}>{title}</b>({singer})
                 <button onClick={() => onRemoveMusic(id)}>삭제</button>
             </div>
         </>
     )
 }
-
-function MusicList({ musicList, onRemoveMusic, onToggle} ) {
+function MusicList({ musicList, onRemoveMusic, onToggleMusic} ) {
     return (
         <>
             { musicList.map((music) => (
-                <Music key={music.id} music={music} onRemoveMusic={onRemoveMusic} onToggle={onToggle}/>
+                <Music key={music.id} music={music} onRemoveMusic={onRemoveMusic} onToggle={onToggleMusic}/>
             ))}
         </>
     )

@@ -34,6 +34,7 @@ function App() {
     mtitle: '',
     director: '',
     year: '',
+    atcive: false,
   });
 
   const {title, singer} = music;
@@ -46,9 +47,9 @@ function App() {
   ]);
 
   const [movieList, setMovieList] = useState([
-    { id: 1, mtitle: "스타워즈", director: "조지 루카스", year: "1977" },
-    { id: 2, mtitle: "아바타", director: "제임스 카메론", year: "2009" },
-    { id: 3, mtitle: "인터스텔라", director: "크리스토퍼 놀란", year: "2014" },
+    { id: 1, mtitle: "스타워즈", director: "조지 루카스", year: "1977" , atcive: false},
+    { id: 2, mtitle: "아바타", director: "제임스 카메론", year: "2009" , atcive: false},
+    { id: 3, mtitle: "인터스텔라", director: "크리스토퍼 놀란", year: "2014" , atcive: false},
 ]);
 
   const onChangeMusic = (e) => {
@@ -130,11 +131,20 @@ function App() {
     setMusicList(musicList.filter(music => music.id !== id))
   };
 
-  const onToggle = (id) => {
-    setMusicList(musicList.map(music => music.id === id ? {
+  const onToggleMusic = (id) => {
+    setMusicList(
+      musicList.map(music => music.id === id ? {
       ...music,
-      active: !music.active,
+      active: ! music.active,
     } : music ))
+  }
+  
+  const onToggleMovie = (id) => {
+    setMovieList(
+      movieList.map(movie => movie.id === id ? {
+      ...movie,
+      active: ! movie.active,
+    } : movie ))
   }
 
   const onRemoveMovie = (id) => {
@@ -149,7 +159,7 @@ function App() {
         onChangeMusic={onChangeMusic}
         onCreateMusic={onCreateMusic}
       />
-      <MusicList musicList={musicList} onRemoveMusic={onRemoveMusic}/>
+      <MusicList musicList={musicList} onRemoveMusic={onRemoveMusic} onToggleMusic={onToggleMusic}/>
       
       <CreatMovie
         mtitle={mtitle}
@@ -158,7 +168,7 @@ function App() {
         onChangeMovie={onChangeMovie}
         onCreateMovie={onCreateMovie}
       />
-      <MovieList movieList={movieList} onRemoveMovie={onRemoveMovie}/>
+      <MovieList movieList={movieList} onRemoveMovie={onRemoveMovie} onToggleMovie={onToggleMovie}/>
     </>
   );
 }
