@@ -6,7 +6,7 @@ function Music({music}) {
     return (
         <>
         <div>
-                <b>{title}</b>({singer})
+                <b>{title}</b>({singer})<button>삭제</button>
             </div>
         </>
     )
