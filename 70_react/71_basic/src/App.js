@@ -72,7 +72,7 @@ function App() {
     });
   };
 
-  const onremove = () => {
+  const onRemove = (id) => {
     
   }
   return (
