@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Component, useEffect } from "react";
 //import Music2 from "./Music2";
 
 
@@ -30,6 +30,13 @@ function Music({music, onRemoveMusic, onToggleMusic}) {
     )
 }
 function MusicList({ musicList, onRemoveMusic, onToggleMusic} ) {
+    const countActiveMusic = () => {
+        console.log("Active 개수 세기");
+        return 
+    }
+
+    }
+    
     return (
         <>
             { musicList.map((music) => (
