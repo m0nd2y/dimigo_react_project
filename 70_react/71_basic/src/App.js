@@ -55,7 +55,7 @@ function App() {
   const onChangeMusic = (e) => {
     const { name, value } = e.target;
     setMusic({
-      ...music, 
+      ...music,
       [name] : value // e.target.name -> title, value
     })
   }

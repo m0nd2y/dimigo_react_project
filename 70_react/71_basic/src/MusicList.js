@@ -1,4 +1,5 @@
 import React from "react";
+import Music2 from "./Music2";
 
 
 function Music({music, onRemoveMusic, onToggleMusic}) {
@@ -13,7 +14,7 @@ function Music({music, onRemoveMusic, onToggleMusic}) {
         <>
         <div>
                 <b style={style} onClick={() => onToggleMusic(id)}>{title}</b>({singer})
-                <button onClick={() => onRemoveMusic(id)}>삭제</button>
+              ㄴ  <button onClick={() => onRemoveMusic(id)}>삭제</button>
             </div>
         </>
     )
@@ -22,7 +23,7 @@ function MusicList({ musicList, onRemoveMusic, onToggleMusic} ) {
     return (
         <>
             { musicList.map((music) => (
-                <Music key={music.id} music={music} onRemoveMusic={onRemoveMusic} onToggle={onToggleMusic}/>
+                <Music2 key={music.id} music={music} onRemoveMusic={onRemoveMusic} onToggle={onToggleMusic}/>
             ))}
         </>
     )

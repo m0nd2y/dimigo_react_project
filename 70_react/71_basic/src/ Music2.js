@@ -4,7 +4,7 @@ import React, {Component} from "react";
 
 class Music2 extends Component {
     render() {
-        const { music, onRemove, onToggle } = this.props;
+        const { music, onRemoveMusic, onToggleMusic } = this.props;
         const { id, title, singer, active } = music;
     
         const style = {
@@ -20,4 +20,10 @@ class Music2 extends Component {
             </>
         )
     }
+
+    componentDidMount(){
+        console.log("hi")
+    }
 }
+
+export default Music2;
