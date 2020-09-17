@@ -9,9 +9,11 @@ function Music({music, onRemoveMusic, onToggleMusic}) {
         color: active ? "blue" : "black",
         cursor: "pointer"
     };
+    /*
     useEffect(() => {
         console.log("언제 호출될까?");
     });
+    */
 
     useEffect(() => {
         console.log("컴포넌트가 화면에 나타남");
