@@ -74,15 +74,7 @@ function App() {
   const onCreateMusic = () => {
     // 배열에 추가
     // 1. spread 연산자
-    setMusicList([
-      ...musicList,
-      {
-        id: nextIdMusic.current,
-        ...music
-        //title: title,
-        //singer: singer,
-      },
-    ]);
+    
     setMusicList(musicList.concat({
       id: nextIdMusic.current,
       ...music,
