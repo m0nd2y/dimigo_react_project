@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 //import Music2 from "./Music2";
 
 
@@ -32,16 +32,17 @@ function Music({music, onRemoveMusic, onToggleMusic}) {
 function MusicList({ musicList, onRemoveMusic, onToggleMusic} ) {
     const countActiveMusic = () => {
         console.log("Active 개수 세기");
-        return 
-    }
-
-    }
+        return  musicList.filter((music) => music.active).length;
+    };
+    const count = useMemo(countActiveMusic, [musicList]);
     
     return (
         <>
             { musicList.map((music) => (
-                <Music key={music.id} music={music} onRemoveMusic={onRemoveMusic} onToggle={onToggleMusic}/>
-            ))}
+                <Music key={music.id} music={music} onRemoveMusic={onRemoveMusic} onToggleMusic={onToggleMusic}/>
+        ))}
+        <hr />
+        <div>Active 된 Music 수 : {count} </div>
         </>
     )
 }
