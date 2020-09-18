@@ -36,7 +36,9 @@ function reducer(state, action) {
                 }
             };
         case "CREATE" :
-            return state;
+            return {
+                
+            };
         case "RESET" :
             return state;
         case "TOGGLE" :
