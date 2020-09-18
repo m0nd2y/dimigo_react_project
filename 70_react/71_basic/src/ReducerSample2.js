@@ -1,31 +1,39 @@
-import React, { useState, useRef } from "react"; //비구조화 할당?
+import React, { useReducer, useRef } from "react"; //비구조화 할당?
 
-function Reducersample2() {
-  const [student, setStudent] = useState({
+const initialState = {
     id: "",
     name: "",
-  });
+}
 
+function reducer(state, action) {
+    switch(action.type) {
+        case "CHANGE" :
+            return state + 1;
+        case "REEST" :
+            return {id : "", name : ""}
+        default :
+            throw new Error("Unhandled action");
+    }
+}
 
-  // inputId = {current: }
-  const inputId = useRef(); //ref 객체 
-  const inputName = useRef(); //ref 객체 
-  
+function Reducersample2() {
+  const [student, dispatch] = useReducer(reducer,initialState);
+
   const { id, name } = student;
 
   const onChange = (e) => {
     const { value, name } = e.target;
-    setStudent({
-      ...student,
-      [name]: value,
-    });
+    dispatch({
+        type: "CHANGE",
+        name,
+        value
+    })
   };
 
   const onReset = () => {
-    setStudent({
-      id: "",
-      name: "",
-    });
+    dispatch({
+        type : "RESET"
+    })
     inputName.current.focus();
   };
 
