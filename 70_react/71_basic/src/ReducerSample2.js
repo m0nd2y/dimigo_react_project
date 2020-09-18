@@ -1,23 +1,30 @@
 import React, { useReducer, useRef } from "react"; //비구조화 할당?
 
+
 const initialState = {
     id: "",
     name: "",
 }
 
+
 function reducer(state, action) {
     switch(action.type) {
         case "CHANGE" :
-            return state + 1;
-        case "REEST" :
-            return {id : "", name : ""}
+            return {
+                ...state,
+                [action.name] : action.value
+            }
+        case "RESET" :
+            return initialState
         default :
             throw new Error("Unhandled action");
     }
 }
 
-function Reducersample2() {
+function ReducerSample2() {
   const [student, dispatch] = useReducer(reducer,initialState);
+  const inputId = useRef();
+  const inputName = useRef();
 
   const { id, name } = student;
 
@@ -52,4 +59,4 @@ function Reducersample2() {
   );
 }
 
-export default UpgradeInput;
+export default ReducerSample2;
