@@ -1,17 +1,8 @@
 import React, { useRef, useReducer } from "react";
-import Hello from "./Hello";
-import Hello2 from "./Hello2";
 import "./App.css";
-import State from "./State";
-import StateSample2 from "./StateSample2";
-import InputSample from "./InputSample";
-import InputSample2 from "./InputSample2";
 import MusicList from "./MusicList";
-import MovieList from "./MovieList";
-import CreateMovie from "./CreateMovie";
 import CreatMusic from "./CreatMusic";
 
-setMovieList
 const initialState = {
     music : {
         title:"",
@@ -37,12 +28,21 @@ function reducer(state, action) {
             };
         case "CREATE" :
             return {
-                
+                musicList: state.musicList.concat(action.music),
+                music: initialState.music
             };
-        case "RESET" :
-            return state;
+        case "REMOVE" :
+            return {
+                ...state,
+                musicList : state.musicList.filter(music => music.id !== action.id)
+            };
         case "TOGGLE" :
-            return state;
+            return {
+                ...state,
+                musicList: state.musicList.map(
+                    music => music.id === action.id ?
+                    {...music, active: !music.active}:music)
+            };
         default :
             throw new Error("Unhandled action");
     }
@@ -74,12 +74,8 @@ function MusicReducerApp() {
             singer
         }
     })
-
     nextId.current += 1;
-
-    dispatch({
-        type : "RESET"
-    });
+    
   };
 
   const onRemoveMusic = (id) => {
