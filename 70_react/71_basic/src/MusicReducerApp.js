@@ -41,9 +41,10 @@ function reducer(state, action) {
 }
 
 function MusicReducerApp() {
-  const [music, dispatch] = useReducer(reducer, initialState.music)
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const { title, singer } = state.music;
 
-  const { title, singer } = music;
+  const { musicList } = state;
 
   const onChangeMusic = (e) => {
     const { name, value } = e.target;
