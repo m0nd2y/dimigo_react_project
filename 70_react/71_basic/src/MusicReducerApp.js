@@ -28,7 +28,13 @@ const initialState = {
 function reducer(state, action) {
     switch(action.type) {
         case "CHANGE" :
-            return state;
+            return {
+                ...state,
+                music: {
+                    ...state.music,
+                    [action.name] : action.value
+                }
+            };
         case "CREATE" :
             return state;
         case "RESET" :
@@ -56,29 +62,38 @@ function MusicReducerApp() {
     };
 
   const nextId = useRef(4);
+
   const onCreateMusic = () => {
     dispatch({
         type : "CREATE",
-        ...music,
-        id: nextId.current,
+        music: {
+            id: nextId.current,
+            title,
+            singer
+        }
     })
 
     nextId.current += 1;
+
     dispatch({
         type : "RESET"
     });
   };
+
   const onRemoveMusic = (id) => {
-    setMusicList(musicList.filter((music) => music.id !== id));
+    dispatch({
+        type : "REMOVE",
+        id
+    })
   };
 
   const onToggleMusic = (id) => {
-    setMusicList(
-      musicList.map((music) =>
-        music.id === id ? { ...music, active: !music.active } : music
-      )
-    );
+      dispatch({
+          type : "TOGGLE",
+          id
+      })
   };
+
   return (
     <>
       <CreatMusic
