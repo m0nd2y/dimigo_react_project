@@ -30,7 +30,7 @@ function reducer(state, action) {
             return {
                 musicList: state.musicList.concat({
                     ...state.music,
-                    id : action.id,
+                    id : action.music.id,
                     active : false
                 }),
                 music: initialState.music

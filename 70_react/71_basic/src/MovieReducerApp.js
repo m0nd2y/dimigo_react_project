@@ -10,7 +10,7 @@ const initialState = {
         year:"",
         active:false,
     },
-  MovieList:[
+  movieList:[
     { id: 1, mtitle: "스타워즈", director: "조지 루카스", year: "1977" , atcive: false},
     { id: 2, mtitle: "아바타", director: "제임스 카메론", year: "2009" , atcive: false},
     { id: 3, mtitle: "인터스텔라", director: "크리스토퍼 놀란", year: "2014" , atcive: false},
@@ -28,10 +28,11 @@ function reducer(state, action) {
                 }
             };
         case "CREATE" :
+            console.log("hihihihih")
             return {
                 movieList: state.movieList.concat({
                     ...state.movie,
-                    id : action.id,
+                    id : action.movie.id,
                     active : false
                 }),
                 movie: initialState.movie
@@ -71,17 +72,18 @@ function MovieReducerApp() {
   const nextId = useRef(4);
 
   const onCreateMovie = () => {
-    dispatch({
-        type : "CREATE",
-        movie: {
-            id: nextId.current,
-            mtitle,
-            director,
-            year
-        }
-    })
-    nextId.current += 1;
-    
+      console.log(nextId.current)
+      dispatch({
+          type : "CREATE",
+          movie: {
+              id: nextId.current,
+              mtitle,
+              director,
+              year
+            }
+        })
+        nextId.current += 1;
+        console.log(nextId.current)
   };
 
   const onRemoveMovie = (id) => {
@@ -105,7 +107,7 @@ function MovieReducerApp() {
         director={director}
         year={year}
         onChangeMovie={onChangeMovie}
-        onCreateMoviec={onCreateMovie}
+        onCreateMovie={onCreateMovie}
       />
       <MovieList
         movieList={movieList}
