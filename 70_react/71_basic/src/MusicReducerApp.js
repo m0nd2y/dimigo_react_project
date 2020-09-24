@@ -1,4 +1,4 @@
-import React, { useRef, useReducer } from "react";
+import React, { useRef, useReducer, createContext } from "react";
 import "./App.css";
 import MusicList from "./MusicList";
 import CreatMusic from "./CreatMusic";
@@ -52,6 +52,8 @@ function reducer(state, action) {
     }
 }
 
+export const MusicContext = createContext(null)
+
 function MusicReducerApp() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { title, singer } = state.music;
@@ -98,17 +100,19 @@ function MusicReducerApp() {
 
   return (
     <>
-      <CreatMusic
-        title={title}
-        singer={singer}
-        onChangeMusic={onChangeMusic}
-        onCreateMusic={onCreateMusic}
-      />
-      <MusicList
-        musicList={musicList}
-        onRemoveMusic={onRemoveMusic}
-        onToggleMusic={onToggleMusic}
-      />
+        <MusicContext.Provider value={dispatch}>
+            <CreatMusic
+                title={title}
+                singer={singer}
+                onChangeMusic={onChangeMusic}
+                onCreateMusic={onCreateMusic}
+            />
+            <MusicList
+                musicList={musicList}
+                onRemoveMusic={onRemoveMusic}
+                onToggleMusic={onToggleMusic}
+            />
+        </MusicContext.Provider>
     </>
   );
 } 

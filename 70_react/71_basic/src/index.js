@@ -4,10 +4,11 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import MovieReducerApp from './MovieReducerApp.js';
 import MusicReducerApp from './MusicReducerApp';
+import ContextSample from './ContextSample';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MovieReducerApp />
+    <ContextSample />
   </React.StrictMode>,
   document.getElementById('root')
 );
