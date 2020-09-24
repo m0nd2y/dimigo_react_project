@@ -6,10 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import ReducerSample from './ReducerSample';
 import ReducerSample2 from './ReducerSample2';
 import MusicReducerApp from './MusicReducerApp';
+import MovieReducerApp from './MovieReducerApp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MusicReducerApp />
+    <MovieReducerApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
