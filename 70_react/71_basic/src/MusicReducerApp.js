@@ -28,7 +28,11 @@ function reducer(state, action) {
             };
         case "CREATE" :
             return {
-                musicList: state.musicList.concat(action.music),
+                musicList: state.musicList.concat({
+                    ...state.music,
+                    id : action.id,
+                    active : false
+                }),
                 music: initialState.music
             };
         case "REMOVE" :
