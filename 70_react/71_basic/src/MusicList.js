@@ -1,8 +1,7 @@
-import React, { useEffect, useMemo } from "react";
-//import Music2 from "./Music2";
+import React, { useEffect, useMemo, useContext } from "react";
+import { MusicContext } from "./MusicReducerApp"
 
-
-function Music({music, onRemoveMusic, onToggleMusic}) {
+function Music({music}) {
     const { id, title, singer, active } = music;
     
     const style = {
@@ -31,7 +30,7 @@ function Music({music, onRemoveMusic, onToggleMusic}) {
         </>
     )
 }
-function MusicList({ musicList, onRemoveMusic, onToggleMusic} ) {
+function MusicList({ musicList } ) {
     const countActiveMusic = () => {
         console.log("Active 개수 세기");
         return  musicList.filter((music) => music.active).length;
@@ -41,7 +40,7 @@ function MusicList({ musicList, onRemoveMusic, onToggleMusic} ) {
     return (
         <>
             { musicList.map((music) => (
-                <Music key={music.id} music={music} onRemoveMusic={onRemoveMusic} onToggleMusic={onToggleMusic}/>
+                <Music key={music.id} music={music} />
         ))}
         <hr />
         <div>Active 된 Music 수 : {count} </div>

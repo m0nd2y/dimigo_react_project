@@ -57,7 +57,6 @@ export const MusicContext = createContext(null)
 function MusicReducerApp() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { title, singer } = state.music;
-
   const { musicList } = state;
 
   const onChangeMusic = (e) => {
@@ -109,8 +108,6 @@ function MusicReducerApp() {
             />
             <MusicList
                 musicList={musicList}
-                onRemoveMusic={onRemoveMusic}
-                onToggleMusic={onToggleMusic}
             />
         </MusicContext.Provider>
     </>
