@@ -21,6 +21,10 @@ function Music({music}) {
         };
     }, [music])
 
+    useContext(MusicContext);
+    
+
+
     return (
         <>
         <div>
