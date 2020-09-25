@@ -8,7 +8,7 @@ import ContextSample from './ContextSample';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContextSample />
+    <MovieReducerApp />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,4 +1,4 @@
-import React, { useRef, useReducer } from "react";
+import React, { useRef, useReducer, createContext } from "react";
 import "./App.css";
 import MovieList from "./MovieList";
 import CreatMovie from "./CreatMovie";
@@ -54,10 +54,11 @@ function reducer(state, action) {
     }
 }
 
+export const MovieContext = createContext(null)
+
 function MovieReducerApp() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { mtitle, director, year } = state.movie;
-
   const { movieList } = state;
 
   const onChangeMovie = (e) => {
@@ -86,34 +87,20 @@ function MovieReducerApp() {
         console.log(nextId.current)
   };
 
-  const onRemoveMovie = (id) => {
-    dispatch({
-        type : "REMOVE",
-        id
-    })
-  };
-
-  const onToggleMovie = (id) => {
-      dispatch({
-          type : "TOGGLE",
-          id
-      })
-  };
-
   return (
     <>
-      <CreatMovie
-        mtitle={mtitle}
-        director={director}
-        year={year}
-        onChangeMovie={onChangeMovie}
-        onCreateMovie={onCreateMovie}
-      />
+      <MovieContext.Provider value={dispatch}>
+        <CreatMovie
+            mtitle={mtitle}
+            director={director}
+            year={year}
+            onChangeMovie={onChangeMovie}
+            onCreateMovie={onCreateMovie}
+        />
       <MovieList
         movieList={movieList}
-        onRemoveMovie={onRemoveMovie}
-        onToggleMovie={onToggleMovie}
       />
+      </MovieContext.Provider>
     </>
   );
 } 

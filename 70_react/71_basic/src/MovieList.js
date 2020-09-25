@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useContext } from "react";
+import { MovieContext } from "./MovieReducerApp"
 
-function Movie({movie, onRemoveMovie, onToggleMovie}) {
+function Movie({movie}) {
     const { id, mtitle, director, year, active } = movie;
 
     const style = {
@@ -19,6 +20,24 @@ function Movie({movie, onRemoveMovie, onToggleMovie}) {
         };
     }, [movie])
 
+    const dispatch = useContext(MovieContext)
+
+
+    const onRemoveMovie = (id) => {
+        dispatch({
+            type : "REMOVE",
+            id
+        })
+    };
+
+    const onToggleMovie = (id) => {
+        dispatch({
+            type : "TOGGLE",
+            id
+        })
+    };
+
+  
     return (
         <>
         <div>
@@ -29,7 +48,7 @@ function Movie({movie, onRemoveMovie, onToggleMovie}) {
     )
 }
 
-function MovieList({ movieList, onRemoveMovie, onToggleMovie}) {
+function MovieList({ movieList}) {
     const countActiveMovie = () => {
         console.log("Active 개수 세기");
         return  movieList.filter((movie) => movie.active).length;
@@ -39,7 +58,7 @@ function MovieList({ movieList, onRemoveMovie, onToggleMovie}) {
     return (
         <>
             { movieList.map((movie) => (
-                <Movie key={movie.id} movie={movie} onRemoveMovie={onRemoveMovie} onToggleMovie={onToggleMovie}/>
+                <Movie key={movie.id} movie={movie} />
             ))}
             <hr />
             <div>Active 된 Movie 수 : {count} </div>
