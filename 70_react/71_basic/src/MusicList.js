@@ -21,8 +21,21 @@ function Music({music}) {
         };
     }, [music])
 
-    useContext(MusicContext);
+    const dispatch = useContext(MusicContext);
+
+    const onRemoveMusic = (id) => {
+        dispatch({
+            type : "REMOVE",
+            id
+        })
+      };
     
+      const onToggleMusic = (id) => {
+          dispatch({
+              type : "TOGGLE",
+              id
+          })
+      };
 
 
     return (
