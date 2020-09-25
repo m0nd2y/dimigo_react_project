@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
+import { MusicContext } from "./MusicReducerApp"
 
-function CreatMusic({ title, singer, onChangeMusic, onCreateMusic }) {
+function CreatMusic({ title, singer }) {
+
+    const dispatch = useContext(MusicContext)
+    
     return (
         <>
             <input name="title" placeholder = "노래제목" onChange={onChangeMusic} value={title}></input>
