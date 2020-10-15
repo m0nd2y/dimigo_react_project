@@ -1,0 +1,7 @@
+{
+    "movieList":[
+        { "id": 1, "title": "스타워즈", "director": "조지 루카스", "year": "1977", "active": false },
+        { "id": 2, "title": "아바타", "director": "제임스 카메론", "year": "2009", "active": false },
+        { "id": 3, "title": "인터스텔라", "director": "크리스토퍼 놀란", "year": "2014", "active": false }
+      ]
+}

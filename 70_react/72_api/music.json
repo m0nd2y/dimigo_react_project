@@ -1,0 +1,34 @@
+{
+  "musicList": [
+    {
+      "id": 1,
+      "singer": "아이유",
+      "title": "무릎",
+      "active": false
+    },
+    {
+      "id": 2,
+      "singer": "10cm",
+      "title": "help",
+      "active": false
+    },
+    {
+      "id": 3,
+      "singer": "선우정아",
+      "title": "구애",
+      "active": false
+    },
+    {
+      "title": "되돌릴 수 없는 돌아갈 수 없는 돌아갈 곳 없는",
+      "singer": "박봄",
+      "active": false,
+      "id": 4
+    },
+    {
+      "title": "goodbye",
+      "singer": "2ne1",
+      "active": false,
+      "id": 5
+    }
+  ]
+}
